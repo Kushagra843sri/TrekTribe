@@ -109,7 +109,19 @@ app.use("/", userRouter)
 
 app.get("/", (req,res) =>{
     res.render("home.ejs");
+});
+
+
+// Privacy page
+app.get("/privacy", (req,res) =>{
+    res.render("privacy.ejs");
+});
+
+app.get("/terms", (req,res) =>{
+    res.render("term.ejs");
 })
+
+
 app.all("*",(req,res,next) => {
     next(new ExpressError(404,"Page Not Found"));
 });
