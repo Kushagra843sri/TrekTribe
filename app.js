@@ -2,7 +2,7 @@ if(process.env.NODE_ENV != "production"){
     require('dotenv').config();
 }
 
-console.log(process.env.SECRET);
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -107,6 +107,13 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter)
 
+app.get("/", (req,res) =>{
+    res.render("home.ejs");
+})
+app.all("*",(req,res,next) => {
+    next(new ExpressError(404,"Page Not Found"));
+});
+
 
 // Creating Error handling Middleware
 app.use((err,req,res,next) => {
@@ -116,8 +123,6 @@ app.use((err,req,res,next) => {
 });
 
 
-app.all("*",(req,res,next) => {
-    next(new ExpressError(404,"Page Not Found"));
-});
+
 
 

@@ -122,3 +122,30 @@ body{
     width: 80vh;
     border: 4px solid #000;
  }
+
+ /* Home page */
+
+ #home a{
+    display: flex;
+    height: 100px!important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    text-align: center;
+    font-size: 40px;
+    /* margin: 100px !important;  */
+    margin-left: 80px !important;
+    margin-right: 40px !important;
+    margin-top: 250px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 8px solid black;
+    padding: 5px !important;
+    color: white !important;
+    background-color: purple !important;
+
+ }
+
+ #home{
+    height: 100vh !important;
+    background-color: whitesmoke !important;
+ }
